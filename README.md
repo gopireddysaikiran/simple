@@ -37,6 +37,17 @@ npx wrangler login       # Login to your Cloudflare account (one-time)
 npm run deploy            # Deploy to production
 ```
 
+## 🔄 GitHub + Cloudflare Deployment
+
+This project is configured as a Cloudflare Worker, so the safest deployment path is to deploy from GitHub Actions using a Worker token instead of relying on the Cloudflare UI build pipeline.
+
+1. Create a Cloudflare API token with Worker permissions.
+2. Add these repository secrets in GitHub:
+   - `CLOUDFLARE_API_TOKEN`
+   - `CLOUDFLARE_ACCOUNT_ID`
+3. Push to the `main` branch.
+4. The GitHub Action in `.github/workflows/deploy-cloudflare.yml` will deploy the Worker automatically.
+
 ## ⚙️ How It Works
 
 - **Frontend** → Static HTML/CSS/JS served via Cloudflare Pages CDN (global edge)
