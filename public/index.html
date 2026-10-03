@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DevOps Demo | Cloudflare Deployment</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="container">
+      <h1>🚀 DevOps Demo App</h1>
+      <p class="subtitle">Deployed on <strong>Cloudflare Pages + Workers</strong></p>
+      <p class="tagline">A simple full-stack app running on the edge</p>
+    </div>
+  </header>
+
+  <!-- API Demo Section -->
+  <main class="container">
+    <section class="card">
+      <h2>📡 Call the API</h2>
+      <p>Click the button below to call the Cloudflare Worker API endpoint.</p>
+      <button id="api-btn" class="btn">Fetch from API</button>
+      <div id="api-response" class="response-box hidden">
+        <pre id="response-text"></pre>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>⚙️ How It Works</h2>
+      <div class="steps">
+        <div class="step">
+          <span class="step-number">1</span>
+          <div>
+            <h3>Frontend (Pages)</h3>
+            <p>Static HTML/CSS/JS served globally via Cloudflare's CDN</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="step-number">2</span>
+          <div>
+            <h3>Backend (Workers)</h3>
+            <p>Serverless API running at the edge using Cloudflare Functions</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="step-number">3</span>
+          <div>
+            <h3>Deploy (Wrangler)</h3>
+            <p>One command to deploy everything: <code>npm run deploy</code></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>🌍 Deployment Info</h2>
+      <div id="info-grid" class="info-grid">
+        <div class="info-item">
+          <span class="label">Status</span>
+          <span class="value" id="status">🟢 Live</span>
+        </div>
+        <div class="info-item">
+          <span class="label">Platform</span>
+          <span class="value">Cloudflare</span>
+        </div>
+        <div class="info-item">
+          <span class="label">Type</span>
+          <span class="value">Full-Stack</span>
+        </div>
+        <div class="info-item">
+          <span class="label">Region</span>
+          <span class="value">Edge (Global)</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Built with ❤️ for DevOps YouTube Content</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
