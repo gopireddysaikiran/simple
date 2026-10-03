@@ -1,19 +1,26 @@
-// Cloudflare Pages Function — serves as the backend Worker
-// Route: GET /api/hello
+export default {
+  async fetch(request, env) {
+    const url = new URL(request.url);
 
-export async function onRequestGet(context) {
-  const data = {
-    message: "Hello from Cloudflare Workers! 🚀",
-    timestamp: new Date().toISOString(),
-    region: context.request.cf?.colo || "unknown",
-    country: context.request.cf?.country || "unknown",
-    deployed: true,
-  };
+    // GET /api/hello
+    if (url.pathname === "/api/hello" && request.method === "GET") {
+      const data = {
+        message: "Hello from Cloudflare Workers! 🚀",
+        timestamp: new Date().toISOString(),
+        region: request.cf?.colo || "unknown",
+        country: request.cf?.country || "unknown",
+        deployed: true,
+      };
 
-  return new Response(JSON.stringify(data, null, 2), {
-    headers: {
-      "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": "*",
-    },
-  });
-}
+      return new Response(JSON.stringify(data, null, 2), {
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
+        },
+      });
+    }
+
+    // Serve HTML/CSS/JS from public/
+    return env.ASSETS.fetch(request);
+  },
+};
