@@ -14,3 +14,4 @@ ENVIRONMENT = "production"
 [observability]
 enabled = true
 # ...
+
