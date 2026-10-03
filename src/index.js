@@ -5,7 +5,7 @@ export default {
     // GET /api/hello
     if (url.pathname === "/api/hello" && request.method === "GET") {
       const data = {
-        message: "Hello from Cloudflare Workers! 🚀",
+        message: "Hello from TechieFit! 🚀",
         timestamp: new Date().toISOString(),
         region: request.cf?.colo || "unknown",
         country: request.cf?.country || "unknown",
