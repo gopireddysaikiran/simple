@@ -17,7 +17,6 @@ head_sampling_rate = 1
 redact_query_string = false
 # ...
 
-
 [observability.logs]
 enabled = true
 head_sampling_rate = 1
