@@ -11,5 +11,5 @@ run_worker_first = true
 ENVIRONMENT = "production"
 # ...
 [observability]
-enabled = false
+enabled = true
 # ...
