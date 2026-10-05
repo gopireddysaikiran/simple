@@ -5,7 +5,7 @@ export default {
     // GET /api/hello
     if (url.pathname === "/api/hello" && request.method === "GET") {
       const data = {
-        message: "Hello from TechieFit! #DevOpsDemo, #CloudflareWorkers",
+        message: "Hello from TechieFit! #DevOpsDemo , #CloudflareWorkers",
         timestamp: new Date().toISOString(),
         region: request.cf?.colo || "unknown",
         country: request.cf?.country || "unknown",
@@ -14,10 +14,9 @@ export default {
 
       console.log("API request received:", data);
 
-      return new Response(JSON.stringify(data), {
-        headers: { "Content-Type": "application/json" },
-      });
-    }
+      const response = new Response(JSON.stringify(data, null, 2), {
+        
+
 
     // Serve HTML/CSS/JS from public/
     return env.ASSETS.fetch(request);
