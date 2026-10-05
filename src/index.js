@@ -12,7 +12,7 @@ export default {
         deployed: true,
       };
 
-      console.log("API request received:", data);
+      
 
       return new Response(JSON.stringify(data, null, 2), {
         headers: {
