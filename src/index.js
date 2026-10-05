@@ -17,13 +17,6 @@ export default {
       const response = new Response(JSON.stringify(data, null, 2), {
         
 
-      return new Response(JSON.stringify(data, null, 2), {
-        headers: {
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "*",
-        },
-      });
-    }
 
     // Serve HTML/CSS/JS from public/
     return env.ASSETS.fetch(request);
