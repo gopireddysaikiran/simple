@@ -12,10 +12,6 @@ export default {
         deployed: true,
       };
 
-      console.log("API request received:", data);
-
-      console.log("Request headers:", Object.fromEntries(request.headers.entries()));
-
       return new Response(JSON.stringify(data, null, 2), {
         headers: {
           "Content-Type": "application/json",
