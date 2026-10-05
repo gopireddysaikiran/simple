@@ -14,7 +14,7 @@ export default {
 
       console.log("API request received:", data);
 
-      console.log("API response:", data);
+
 
       return new Response(JSON.stringify(data, null, 2), {
         headers: {
