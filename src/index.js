@@ -14,7 +14,6 @@ export default {
 
       console.log("API request received:", data);
 
-
       return new Response(JSON.stringify(data), {
         headers: { "Content-Type": "application/json" },
       });
