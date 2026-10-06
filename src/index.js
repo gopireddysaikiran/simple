@@ -14,9 +14,10 @@ export default {
 
       console.log("API request received:", data);
 
-      const response = new Response(JSON.stringify(data, null, 2), {
-        
-
+      return new Response(JSON.stringify(data), {
+        headers: { "Content-Type": "application/json" },
+      });
+    }
 
     // Serve HTML/CSS/JS from public/
     return env.ASSETS.fetch(request);
