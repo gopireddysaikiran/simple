@@ -16,6 +16,9 @@ export default {
 
       console.log("Request headers:", Object.fromEntries(request.headers.entries()));
 
+      console.log("Request headers:", Object.fromEntries(request.headers.entries()));
+
+
       return new Response(JSON.stringify(data), {
         headers: { "Content-Type": "application/json" },
       });
