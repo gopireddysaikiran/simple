@@ -7,6 +7,8 @@ apiBtn.addEventListener("click", async () => {
   apiBtn.disabled = true;
   apiBtn.textContent = "Loading...";
 
+console.log("Click event triggered");
+
   try {
     const res = await fetch("/api/hello");
     const data = await res.json();
